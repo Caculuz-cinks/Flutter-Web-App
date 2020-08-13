@@ -2,12 +2,12 @@ import 'package:WebApp/responsiveness/config.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class VideoView extends StatefulWidget {
+class VideoViewMobile extends StatefulWidget {
   @override
   _VideoViewState createState() => _VideoViewState();
 }
 
-class _VideoViewState extends State<VideoView> {
+class _VideoViewState extends State<VideoViewMobile> {
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
 

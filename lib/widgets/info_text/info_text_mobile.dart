@@ -1,4 +1,3 @@
-import 'package:WebApp/responsiveness/config.dart';
 import 'package:flutter/material.dart';
 
 class InfoText extends StatelessWidget {
@@ -11,10 +10,9 @@ class InfoText extends StatelessWidget {
           Text(
             'Keep Track of Your Benefit\nat Pay Platform Payment',
             style: TextStyle(
-              fontWeight: FontWeight.w900,
-              color: Color(0xff152C5B),
-              fontSize: Config.textSize(context, 40),
-            ),
+                fontWeight: FontWeight.w900,
+                color: Color(0xff152C5B),
+                fontSize: 40),
           ),
           SizedBox(height: 20),
           Text(
