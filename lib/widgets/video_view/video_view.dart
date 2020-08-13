@@ -27,31 +27,73 @@ class _VideoViewState extends State<VideoView> {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: BoxConstraints(
-        maxWidth: 700,
-      ),
-      child: Container(
-        height: 300,
-        decoration: BoxDecoration(
-          // color: Color(0xffF8F7F9),
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(12),
+    return Stack(
+      children: [
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: 700,
+          ),
+          child: Container(
+            height: 300,
+            decoration: BoxDecoration(
+              color: Color(0xfFF5F3F9).withOpacity(0.3),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Padding(
+              padding: EdgeInsets.all(15.0),
+              child: FutureBuilder(
+                future: _initializeVideoPlayerFuture,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    return AspectRatio(
+                        aspectRatio: _controller.value.aspectRatio,
+                        child: Stack(
+                          alignment: Alignment.bottomCenter,
+                          children: <Widget>[
+                            VideoPlayer(_controller),
+                            VideoProgressIndicator(
+                              _controller,
+                              allowScrubbing: true,
+                            ),
+                          ],
+                        ));
+                  } else {
+                    return Center(child: CircularProgressIndicator());
+                  }
+                },
+              ),
+            ),
+          ),
         ),
-        child: FutureBuilder(
-          future: _initializeVideoPlayerFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              return AspectRatio(
-                aspectRatio: _controller.value.aspectRatio,
-                child: VideoPlayer(_controller),
-              );
-            } else {
-              return Center(child: CircularProgressIndicator());
-            }
-          },
-        ),
-      ),
+        Positioned(
+          top: 120,
+          left: 230,
+          child: Container(
+            child: RawMaterialButton(
+              constraints: BoxConstraints(minWidth: 36.0, minHeight: 36.0),
+              onPressed: () {
+                setState(() {
+                  if (_controller.value.isPlaying) {
+                    _controller.pause();
+                  } else {
+                    _controller.play();
+                  }
+                });
+              },
+              child: Icon(
+                _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+                color: Colors.white,
+              ),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50)),
+              fillColor: Color(0xffCDCFCD).withOpacity(0.5),
+              hoverColor: Color(0xffD2D2D2),
+              elevation: 0.0,
+              hoverElevation: 0.0,
+            ),
+          ),
+        )
+      ],
     );
   }
 }

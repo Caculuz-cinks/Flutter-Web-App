@@ -1,5 +1,5 @@
-import 'package:WebApp/widgets/Centered%20View/centered_view.dart';
-import 'package:WebApp/widgets/Navigation%20Bar/navigation_bar.dart';
+import 'package:WebApp/widgets/Centered_View/centered_view.dart';
+import 'package:WebApp/widgets/Navigation_Bar/navigation_bar.dart';
 import 'package:WebApp/widgets/info_text/info_text.dart';
 import 'package:WebApp/widgets/video_view/video_view.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE5E5E5),
+      backgroundColor: Color(0xffF8F5FF),
       body: Stack(
         children: [
           Container(
