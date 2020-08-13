@@ -2,6 +2,7 @@ import 'package:WebApp/widgets/Centered_View/centered_view.dart';
 import 'package:WebApp/widgets/Navigation_Bar/navigation_bar.dart';
 import 'package:WebApp/widgets/info_text/info_text.dart';
 import 'package:WebApp/widgets/video_view/video_view.dart';
+import 'package:WebApp/widgets/video_view/video_view_mobile.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewMobile extends StatefulWidget {
@@ -26,7 +27,7 @@ class _HomeViewState extends State<HomeViewMobile> {
               SizedBox(
                 height: 15,
               ),
-              VideoView()
+              VideoViewMobile()
             ],
           ),
         ),

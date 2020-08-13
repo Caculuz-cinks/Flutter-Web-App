@@ -70,7 +70,7 @@ class _VideoViewState extends State<VideoViewMobile> {
         ),
         Positioned(
           top: Config.yMargin(context, 130),
-          left: Config.xMargin(context, 230),
+          left: Config.xMargin(context, 160),
           child: Container(
             child: RawMaterialButton(
               constraints: BoxConstraints(minWidth: 36.0, minHeight: 36.0),

@@ -1,3 +1,4 @@
+import 'package:WebApp/widgets/Navigation_Bar/nav_action.dart';
 import 'package:WebApp/widgets/Navigation_Bar/nav_bar_logo.dart';
 import 'package:WebApp/widgets/Navigation_Bar/nav_item.dart';
 import 'package:flutter/material.dart';
@@ -38,31 +39,9 @@ class NavigationBarTabletDesktop extends StatelessWidget {
               SizedBox(
                 width: 30,
               ),
-              Text(
-                'Login',
-                style: TextStyle(color: Color(0xFf0045FF), fontSize: 10),
-              ),
+              NavAction(),
               SizedBox(
-                width: 20,
-              ),
-              ButtonTheme(
-                height: 28,
-                minWidth: 40,
-                child: FlatButton(
-                    color: Color(0xFf0045FF),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(6)),
-                    onPressed: () {},
-                    child: Text(
-                      'Get Started',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 8,
-                      ),
-                    )),
-              ),
-              SizedBox(
-                width: 30,
+                width: 50,
               ),
             ],
           )
