@@ -1,4 +1,5 @@
 import 'package:WebApp/widgets/Navigation_Bar/nav_bar_logo.dart';
+import 'package:WebApp/widgets/nav_drawer/navigation_drawer.dart';
 import 'package:flutter/material.dart';
 
 class NavigationBarMobile extends StatelessWidget {
@@ -14,7 +15,12 @@ class NavigationBarMobile extends StatelessWidget {
               icon: Icon(
                 Icons.menu,
               ),
-              onPressed: () {}),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NavigationDrawer()),
+                );
+              }),
           NavIcon(),
         ],
       ),

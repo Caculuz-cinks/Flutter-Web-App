@@ -11,7 +11,7 @@ class NavDrawerAction extends StatelessWidget {
             style: TextStyle(color: Color(0xFf0045FF), fontSize: 10),
           ),
           SizedBox(
-            width: 20,
+            height: 10,
           ),
           ButtonTheme(
             height: 28,

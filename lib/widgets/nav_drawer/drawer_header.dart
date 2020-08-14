@@ -2,14 +2,17 @@ import 'package:WebApp/constants/app_color.dart';
 import 'package:WebApp/widgets/nav_drawer/nav_drawer_action.dart';
 import 'package:flutter/material.dart';
 
-class DrawerHeader extends StatelessWidget {
+class MyDrawerHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
+      height: 120,
       color: Colors.white,
       alignment: Alignment.center,
-      child: NavDrawerAction(),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: NavDrawerAction(),
+      ),
     );
   }
 }
